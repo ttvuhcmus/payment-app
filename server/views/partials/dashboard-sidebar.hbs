@@ -1,0 +1,27 @@
+<div class="card" style="width: 100%; margin-bottom: 16px; padding-top: 16px">
+    <img src="images/user.png" class="card-img-top" style="width: 100px; margin: 0 auto" alt="icon">
+    <div class="card-body">
+        <h5 class="card-title" style="text-align: center;">No Name</h5>
+        <p class="card-text" style="text-align: center;">Admin</p>
+        <a href="#" class="btn btn-primary" style="margin: 0 auto; display: block; background: transparent; color: #0E6EFD">Detail</a>
+    </div>
+</div>
+
+<ul class="nav nav-pills flex-column">
+    <li class="nav-item">
+        <a class="nav-link {{#if activeDashboard}}active{{/if}}" href="/dashboard">Dashboard</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link {{#if activeUser}}active{{/if}}" href="/user">User</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link {{#if activeMedicine}}active{{/if}}" href="/medicine">Medicine</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link {{#if activeLocation}}active{{/if}}" href="/location">Location</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link {{#if activeFood}}active{{/if}}" href="/food">Food</a>
+    </li>
+</ul>
+

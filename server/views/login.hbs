@@ -1,0 +1,25 @@
+<div id="loginForm" class="card mx-auto" style="margin-top: 48px;">
+    <div class="card-header text-center">SIGN IN</div>
+    <div class="card-body">
+        <form method="post">
+            <div class="form-group mt-2">
+                <label for="Username">Username:</label>
+                <input name="username" type="text" class="form-control" placeholder="Username">
+            </div>
+
+            <div class="form-group mt-2">
+                <label for="Password">Password:</label>
+                <input name="password" type="password" class="form-control" placeholder="Password">
+            </div>
+
+            <div class="form-group text-center mt-3">
+                <a class="btn btn-success" href="/dashboard" role="button">Login</a>
+            </div>
+        </form>
+        {{#if message}}
+            <div class="alert alert-{{msgcolor}}" role="alert">
+                {{message}}
+            </div>
+        {{/if}}
+    </div>
+</div>
