@@ -1,0 +1,37 @@
+DROP TABLE IF EXISTS "users";
+CREATE TABLE "users" (
+  "id" varchar(50) NOT NULL,
+  "id_number" varchar(50) NOT NULL,
+  "username" varchar(50) NOT NULL,
+  "password" varchar(255) NOT NULL,
+  "token" varchar(255) NOT NULL,
+  "name" varchar(50) NOT NULL,
+  "email" varchar(50) NOT NULL,
+  "date_birth" varchar(50) NOT NULL,
+  "phone" varchar(50) NOT NULL,
+  "address" varchar(250) NOT NULL,
+  "permission" int4 NOT NULL
+);
+
+DROP TABLE IF EXISTS "wallets";
+CREATE TABLE "wallets" (
+  "id" varchar(50) NOT NULL,
+  "user_id" varchar(50) NOT NULL,
+  "balance" int4 NOT NULL,
+  "date" varchar(50) NOT NULL
+);
+
+DROP TABLE IF EXISTS "history";
+CREATE TABLE "history" (
+  "id" varchar(50) NOT NULL,
+  "id_wallet" varchar(50) NOT NULL,
+  "id_dest" varchar(50) NOT NULL,
+  "value" int4 NOT NULL,
+  "date" varchar(50) NOT NULL,
+  "content" varchar(250) NOT NULL
+);
+
+BEGIN;
+INSERT INTO "users" VALUES (1, 1,'admin', '21232f297a57a5a743894a0e4a801fc3', 'asdhaidh2938203as', 'Admin', 'admin@ad', '01/01/2022', '', '', 1);
+INSERT INTO "wallets" VALUES (123456789, 1, 1000000, '01/01/2022');
+COMMIT;

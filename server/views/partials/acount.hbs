@@ -1,0 +1,50 @@
+<div class="acount row">
+    <div class="profile col-md-7">
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Full name</label>
+            <label class="col-sm-9 col-form-label">{{user.name}}</label>
+        </div>
+        {{#ifCond user.permission '==' 0}}
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">ID</label>
+            <label class="col-sm-9 col-form-label">{{user.id_number}}</label>
+        </div>
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Birthday</label>
+            <label class="col-sm-9 col-form-label">{{user.date_birth}}</label>
+        </div>
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Phone</label>
+            <label class="col-sm-9 col-form-label">{{user.phone}}</label>
+        </div>
+
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Address</label>
+            <label class="col-sm-9 col-form-label">{{user.address}}</label>
+        </div>
+        {{/ifCond}}
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Email</label>
+            <label class="col-sm-9 col-form-label">{{user.email}}</label>
+        </div>
+
+    </div>
+    <div class="card text-dark bg-light mb-3 col-md-5">
+        <div class="card-header">
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">ID</label>
+                <label class="col-sm-9 col-form-label">{{wallet.id}}</label>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label"><small>Date open</small></label>
+                <label class="col-sm-9 col-form-label">{{wallet.date}}</label>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Balance</label>
+                <label class="col-sm-9 col-form-label">{{wallet.balance}} VND</label>
+            </div>
+        </div>
+    </div>
+</div>

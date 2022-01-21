@@ -1,0 +1,22 @@
+<div class="home">
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-link{{#ifCond menu '==' 0}} active{{/ifCond}}" href="/" role="tab">Acount</a>
+            {{#if user.permission}}
+            <a class="nav-link{{#ifCond menu '==' 1}} active{{/ifCond}}" href="/create" role="tab">Create</a>
+            <a class="nav-link{{#ifCond menu '==' 2}} active{{/ifCond}}" href="/manager" role="tab">Manger</a>
+            {{/if}}
+            <a class="nav-link{{#ifCond menu '==' 3}} active{{/ifCond}}" href="/history" role="tab">History</a>
+            <a class="nav-link{{#ifCond menu '==' 4}} active{{/ifCond}}" href="/changePassword" role="tab">Change
+                password</a>
+
+        </div>
+    </nav>
+    <div class="tab-content my-5" id="nav-tabContent">
+        {{#ifCond menu '==' 0}}<div class="tab-pane fade show active">{{>acount}}</div>{{/ifCond}}
+        {{#ifCond menu '==' 1}}<div class="tab-pane fade show active">{{>create}}</div>{{/ifCond}}
+        {{#ifCond menu '==' 2}}<div class="tab-pane fade show active">{{>manager}}</div>{{/ifCond}}
+        {{#ifCond menu '==' 3}}<div class="tab-pane fade show active">{{>history}}</div>{{/ifCond}}
+        {{#ifCond menu '==' 4}}<div class="tab-pane fade show active">{{>changePassword}}</div>{{/ifCond}}
+    </div>
+</div>

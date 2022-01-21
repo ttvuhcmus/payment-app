@@ -1,0 +1,13 @@
+<div class="history">
+    <div class="list-group">
+        {{#each history}}
+        <li class="list-group-item list-group-item-action my-2" aria-current="true">
+            <div class="d-flex w-100 justify-content-between">
+                <h6 class="mb-1">{{this.content}}</h6>
+                <small>{{this.date}}</small>
+            </div>
+            <small>#{{this.dest}}</small>
+        </li>
+        {{/each}}
+    </div>
+</div>

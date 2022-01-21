@@ -1,7 +1,12 @@
 <nav class="navbar navbar-light bg-light">
     <div class="container">
         <span class="navbar-brand">
-            Covid Management
+            Payment System
         </span>
+        {{#if out}} {{else}}
+        <form class="float-end mt-1" action="/logout" method="post">
+            <button type="submit" class="btn btn-info">Logout</button>
+        </form>
+        {{/if}}
     </div>
 </nav>

@@ -1,0 +1,121 @@
+<div class="manager">
+    <div class="list-user">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Wallet</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each users}}
+                <tr>
+                    <th scope="row">{{@index}}</th>
+                    <td>{{this.walletId}}</td>
+                    <td>{{this.name}}</td>
+                    <td>{{this.balance}}</td>
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal{{@index}}">
+                            Change balance
+                        </button></td>
+                </tr>
+
+                <div class="modal fade" id="exampleModal{{@index}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"> Change balance</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-1 row">
+                                    <label class="col-sm-3 col-form-label">Full name</label>
+                                    <label class="col-sm-9 col-form-label">{{this.name}}</label>
+                                </div>
+                                {{#ifCond this.permission '==' 0}}
+                                <div class="mb-1 row">
+                                    <label class="col-sm-3 col-form-label">ID</label>
+                                    <label class="col-sm-9 col-form-label">{{this.id_number}}</label>
+                                </div>
+                                <div class="mb-1 row">
+                                    <label class="col-sm-3 col-form-label">Birthday</label>
+                                    <label class="col-sm-9 col-form-label">{{this.date_birth}}</label>
+                                </div>
+                                <div class="mb-1 row">
+                                    <label class="col-sm-3 col-form-label">Phone</label>
+                                    <label class="col-sm-9 col-form-label">{{this.phone}}</label>
+                                </div>
+
+                                <div class="mb-1 row">
+                                    <label class="col-sm-3 col-form-label">Address</label>
+                                    <label class="col-sm-9 col-form-label">{{this.address}}</label>
+                                </div>
+                                {{/ifCond}}
+                                {{#if this.email}}
+                                <div class="mb-1 row">
+                                    <label class="col-sm-3 col-form-label">Email</label>
+                                    <label class="col-sm-9 col-form-label">{{this.email}}</label>
+                                </div>
+                                {{/if}}
+
+                                <div class="input-group mt-4">
+                                    <label for="id" class="col-sm-4 col-form-label">
+                                        <h5>Wallet</h5>
+                                    </label>
+                                    <div class="col-sm-8">
+                                        <input type="text" readonly class="form-control" id="id"
+                                            value="{{this.walletId}}">
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="id" class="col-sm-4 col-form-label">
+                                        <h5>Balance</h5>
+                                    </label>
+                                    <div class="col-sm-8">
+                                        <input type="text" readonly class="form-control" id="id"
+                                            value="{{this.balance}}">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <form action="/balance" method="post">
+                                    <div class="input-group mb-4">
+                                        <label for="id" class="col-sm-4 col-form-label">
+                                            <h5>Change</h5>
+                                        </label>
+                                        <div class="col-sm-8 row">
+                                            <div class="col-4">
+                                                <select class="form-select" name="option">
+                                                    <option value="1"> + </option>
+                                                    <option value="0"> - </option>
+                                                </select>
+                                            </div>
+                                            <div class="col-8"><input type="number" class="form-control" id="id"
+                                                    value="0" name="value" min="0" max="100000000" /></div>
+                                        </div>
+                                    </div>
+                                    <input type="text" name="wallet_id" value="{{this.walletId}}" class="d-none">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-success">Save changes</button>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
